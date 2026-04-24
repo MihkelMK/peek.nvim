@@ -1,5 +1,5 @@
 import { Webview } from 'https://deno.land/x/webview@0.9.0/mod.ts';
-import { parseArgs } from 'https://deno.land/std@0.217.0/cli/parse_args.ts';
+import { parseArgs } from 'https://deno.land/std@0.224.0/cli/parse_args.ts';
 
 const { url, theme, serverUrl } = parseArgs(Deno.args);
 

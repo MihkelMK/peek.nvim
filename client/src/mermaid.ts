@@ -1,4 +1,4 @@
-import Mermaid from 'https://cdn.skypack.dev/@types/mermaid?dts';
+import type Mermaid from 'https://esm.sh/mermaid@11.14.0';
 import { getInjectConfig } from './util.ts';
 
 declare const mermaid: typeof Mermaid;

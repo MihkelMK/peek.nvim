@@ -1,4 +1,4 @@
-import { bundle } from 'https://deno.land/x/emit@0.38.1/mod.ts';
+import { bundle } from 'https://deno.land/x/emit@0.40.0/mod.ts';
 
 const DEBUG = Deno.env.get('DEBUG');
 const { compilerOptions, imports } = JSON.parse(Deno.readTextFileSync('deno.json'));
@@ -57,7 +57,7 @@ const result = await Promise.allSettled([
   emit('client/src/script.ts', 'public/script.bundle.js'),
 
   download(
-    'https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown.min.css',
+    'https://esm.sh/github-markdown-css@5.9.0/github-markdown.css',
     'public/github-markdown.min.css',
     (uint8array) => {
       return new TextEncoder().encode(
@@ -69,14 +69,11 @@ const result = await Promise.allSettled([
   ),
 
   download(
-    'https://cdn.jsdelivr.net/npm/mermaid@10.9.0/dist/mermaid.min.js',
+    'https://cdn.jsdelivr.net/npm/mermaid@11.14.0/dist/mermaid.min.js',
     'public/mermaid.min.js',
   ),
 
-  download(
-    'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css',
-    'public/katex.min.css',
-  ),
+  download('https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/katex.min.css', 'public/katex.min.css'),
 
   ...[
     'KaTeX_AMS-Regular.woff2',
@@ -101,7 +98,7 @@ const result = await Promise.allSettled([
     'KaTeX_Typewriter-Regular.woff2',
   ].map((font) =>
     download(
-      `https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/fonts/${font}`,
+      `https://cdn.jsdelivr.net/npm/katex@0.16.45/dist/fonts/${font}`,
       `public/fonts/${font}`,
     )
   ),

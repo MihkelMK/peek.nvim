@@ -1,13 +1,13 @@
 import { hashCode, uniqueIdGen } from './util.ts';
-import { parseArgs } from 'https://deno.land/std@0.217.0/cli/parse_args.ts';
-import { default as highlight } from 'https://cdn.skypack.dev/highlight.js@11.9.0';
+import { parseArgs } from 'https://deno.land/std@0.224.0/cli/parse_args.ts';
+import { default as highlight } from 'https://esm.sh/highlight.js@11.11.1';
 // @deno-types="https://esm.sh/v135/@types/markdown-it@13.0.7/index.d.ts";
-import MarkdownIt from 'https://esm.sh/markdown-it@14.0.0';
+import MarkdownIt from 'https://esm.sh/markdown-it@14.1.1';
 import { full as MarkdownItEmoji } from 'https://esm.sh/markdown-it-emoji@3.0.0';
 import { default as MarkdownItFootnote } from 'https://esm.sh/markdown-it-footnote@4.0.0';
 import { default as MarkdownItTaskLists } from 'https://esm.sh/markdown-it-task-lists@2.1.1';
 import { default as MarkdownItTexmath } from 'https://esm.sh/markdown-it-texmath@1.0.0';
-import Katex from 'https://esm.sh/katex@0.16.9';
+import Katex from 'https://esm.sh/katex@0.16.45';
 
 const __args = parseArgs(Deno.args);
 
